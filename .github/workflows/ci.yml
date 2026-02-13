@@ -3,9 +3,9 @@ name: RAG CI Pipeline
 on:
   push:
     paths:
-      - 'k8s.txt'
-      - 'app.py'
-      - 'embed.py'
+      - 'ragapi/k8s.txt'
+      - 'ragapi/app.py'
+      - 'ragapi/embed.py'
 
 jobs:
   test-and-build:
