@@ -1,8 +1,8 @@
 import os
 from fastapi import FastAPI
 import chromadb
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 
 
 # Mock LLM mode for CI testing
