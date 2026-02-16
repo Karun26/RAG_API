@@ -22,8 +22,8 @@ def test_kubernetes_query():
     answer2 = response2.json()["answer"]
 
     # Check for key concepts
-    assert "AI/ML" in answer2.lower(), "Missing 'AI/ML' keyword"
-    assert "Engineer" in answer2.lower(), "Missing 'Engineer' keyword"
+    assert "ai/ml" in answer2.lower(), "Missing 'AI/ML' keyword"
+    assert "engineer" in answer2.lower(), "Missing 'Engineer' keyword"
 
     print("✅ Karun query test passed")
 
