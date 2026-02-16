@@ -10,11 +10,13 @@ USE_MOCK_LLM = os.getenv("USE_MOCK_LLM", "0") == "1"
 
 if not USE_MOCK_LLM:
     import ollama
+    ollama_client = ollama.Client(host = "http://host.docker.internal:11434")
+
 
 app = FastAPI()
 chroma = chromadb.PersistentClient(path="./db")
 collection = chroma.get_or_create_collection("docs")
-ollama_client = ollama.Client(host = "http://host.docker.internal:11434")
+
 @app.post("/query")
 def query(q: str):
     results = collection.query(query_texts=[q], n_results=1)
