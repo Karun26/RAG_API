@@ -10,9 +10,9 @@ if existing_ids:
     collection.delete(ids=existing_ids)
 
 # Embed all files in docs/ folder
-for filename in os.listdir("docs"):
+for filename in os.listdir("ragapi/docs"):
     if filename.endswith(".txt"):
-        with open(f"docs/{filename}", "r") as f:
+        with open(f"ragapi/docs/{filename}", "r") as f:
             text = f.read()
             collection.add(documents=[text], ids=[filename])
 
